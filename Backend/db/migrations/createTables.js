@@ -1,4 +1,4 @@
-const database = require("../../config/database");
+const database = require("../../config/db");
 const { v4: uuidv4 } = require("uuid");
 
 class DatabaseMigrations {
