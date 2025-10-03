@@ -17,28 +17,28 @@ class Database {
 
         // MySQL connection configuration
         const config = {
-            host: process.env.DB_HOST || "localhost",
-            port: parseInt(process.env.DB_PORT) || 3306,
-            user: process.env.DB_USER || "root",
-            password: process.env.DB_PASSWORD || "",
-            database: process.env.DB_NAME || "contextbase",
-            waitForConnections: true,
-            connectionLimit: parseInt(process.env.DB_CONNECTION_LIMIT) || 10,
-            queueLimit: 0,
-            enableKeepAlive: true,
-            keepAliveInitialDelay: 0,
-            charset: "utf8mb4",
-            timezone: "+00:00",
-            connectTimeout: 10000, // 10 seconds
-            acquireTimeout: 10000,
-            // SSL configuration (if needed)
-            ssl:
+        host: process.env.DB_HOST || "localhost",
+        port: parseInt(process.env.DB_PORT) || 3307,
+        user: process.env.DB_USER || "ai_powered",
+        password: process.env.DB_PASSWORD || "ai123456f",
+        database: process.env.DB_NAME || "aicontextbase",
+        waitForConnections: true,
+        connectionLimit: parseInt(process.env.DB_CONNECTION_LIMIT) || 10,
+        queueLimit: 0,
+        enableKeepAlive: true,
+        keepAliveInitialDelay: 0,
+        charset: "utf8mb4",
+        timezone: "+00:00",
+        connectTimeout: 10000, // 10 seconds
+        acquireTimeout: 10000,
+          // SSL configuration (if needed)
+        ssl:
             process.env.DB_SSL === "true"
-                ? {
-                    rejectUnauthorized:
+            ? {
+                rejectUnauthorized:
                     process.env.DB_SSL_REJECT_UNAUTHORIZED !== "false",
                 }
-                : false,
+            : false,
         };
 
         // Create connection pool
